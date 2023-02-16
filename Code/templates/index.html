@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Recognition</title>
+    <link rel="stylesheet" href="/static/css/gen.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+  <!--页面头部-->
+   <div class="top">
+ <div class="header1">
+    <div class="title">
+       <i class="fa fa-smile-o" style="font-size:50px"></i>
+        <i class="fa fa-meh-o" style="font-size:50px"></i>
+        Facial Expressions Recognition System
+    </div>
+   </div>
+       <div class="pic2">
+           <img src="/static/im/2.jpeg" alt="upload the picture">
+       </div>
+       </div>
+
+     <hr style="width:98%;background-color:#9999CC;height:3px;border:0px;"/>
+    <!--主体-->
+  <div class="container1"  >
+      <div class="text1">
+          <h3>
+          You can choose 3 different ways,Please click on the picture.
+              </h3>
+      </div>
+      <div class="content1">
+          <a href="/image.html"><img src="/static/im/im.png" alt="upload the picture" class="pic"></a>
+
+          <a href="/video_file"><img src="{{ url_for('static', filename='im/video.png') }}" alt="upload the video" class="pic"></a>
+
+          <a href="/video"><img src="{{ url_for('static', filename='im/camer2.png') }}" alt="upload the realtime" class="pic"></a>
+
+      </div>
+  </div>
+    <!--footer-->
+
+    <div class="footer">
+            <hr style="color:black;size:20px;width:100%;"/>
+    <center>
+ <i class="fa fa-smile-o" style="font-size:36px"></i>
+        <i class="fa fa-meh-o" style="font-size:36px"></i>
+        @Facial Expressions Recognition System</center>
+    </div>
+</head>
+<body>
+</body>
+</html>

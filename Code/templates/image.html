@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block uploadpart %}
+    <div class="col-md-6 column im2">
+        <div style="background-color:#F5F5F5; padding: 20px; ">
+            <h4 class="text-left">
+                Upload image
+            </h4>
+            <form class="form-inline" role="form" action={{ url_for("detect") }} enctype='multipart/form-data'
+                method='GET'  >
+                <div class="form-group" style="width: 60%;">
+                        {% if imgname %}
+                            <img src="/static/images/{{imgname}}" alt="" style="width: 300px; height: 300px">
+                            <input class="d-none" type="text" name="imgname" value="{{imgname}}" required class=""/>
+                        {% else %}
+                            <img src="/static/images/no_image.png" alt="" style="width: 300px; height: 300px">
+                        {% endif %}
+                </div>
+
+                {% if imgname %}
+                    <div class="form-group"  >
+                        <input type="submit" value="Start analyzing" class="btn btn-primary btn"
+                            style="margin-left: 10%;" />
+                    </div>
+                {% endif %}
+
+            </form>
+            <div style="margin-top:10px;margin-bottom: 10px;">
+                <form class="form-inline" role="form" action={{ url_for("upload") }} enctype='multipart/form-data' method='POST'">
+                    <div class="form-group">
+                        <input type="file" name="image" id="inputfile" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Upload image" class="btn btn-primary" />
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

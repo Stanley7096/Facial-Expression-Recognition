@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block uploadpart %}
+<div class="col-md-12 column im2">
+    <div style="background-color:#F5F5F5; padding: 3%; ">
+        <div class="col-md-12">
+            <h4 class="text-left">
+                dynamic image
+            </h4>
+            <div class="text-center" style="padding: 20px; ">
+                    <a class="btn btn-primary" href="/video?capture=true" role="button">Screenshot</a>
+                </div>
+        </div>
+        <div class="col-md-12">
+
+            <div class="video">
+                <img src="{{ url_for('video_feed') }}" style="width: 100%; height: 600px;" />
+            </div>
+
+        </div>
+        {% if imgname %}
+            <div class="row  mt-3">
+                <div class="col-md-12">
+                    <h4 class="text-left">
+                        Screenshot
+                    </h4>
+                    <div class="text-center" style="padding: 20px; ">
+
+                        <a class="btn btn-danger" href="/video" role="button">Recapture</a>
+                    </div>
+
+
+                    <div class="video">
+                        <img src="/static/images/{{imgname}}" style="width: 100%; height: 600px;" />
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

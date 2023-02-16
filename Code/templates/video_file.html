@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block uploadpart %}
+    <div class="col-md-6 column im2">
+        <div style="background-color:#F5F5F5; padding: 20px; ">
+            <h4 class="text-left">
+                Upload video
+            </h4>
+            <form class="form-inline" role="form" action={{ url_for("detect_video") }} enctype='multipart/form-data'
+                method='GET'>
+
+                <div class="form-group" style="width: 60%;">
+                        {% if imgname %}
+                            <input class="d-none" type="text" name="imgname" value="{{imgname}}" required class=""/>
+
+                        {% endif %}
+                </div>
+                {% if imgname %}
+                    <video width="320" height="240" controls >
+                        <source src="/static/images/{{imgname}}" type="video/mp4">
+
+                    </video>
+                {% endif %}
+                {% if imgname %}
+                        <div class="form-group" style="margin-left:20px;">
+                            <input type="submit" value="Start analyzing" class="btn btn-primary btn"
+                                 />
+                        </div>
+                {% endif %}
+
+
+
+            </form>
+            <div style="margin-top:20px;margin-bottom: 20px;">
+                <form class="form-inline" role="form" action={{ url_for("upload_video") }} enctype='multipart/form-data' method='POST'>
+                    <div class="form-group">
+                        <input type="file" name="video" id="inputfile" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Upload video(.mp4)" class="btn btn-primary" />
+                    </div>
+
+            </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
